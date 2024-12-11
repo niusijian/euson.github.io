@@ -1,0 +1,16 @@
+// Function to handle scroll-based animations
+function revealOnScroll() {
+    const workItems = document.querySelectorAll('.work-item');
+    const triggerBottom = window.innerHeight * 0.9;
+
+    workItems.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+
+        if (itemTop < triggerBottom) {
+            item.classList.add('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll(); // Trigger once on page load
